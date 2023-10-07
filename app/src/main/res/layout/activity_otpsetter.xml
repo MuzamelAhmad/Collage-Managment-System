@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:background="@drawable/bgcolor"
+    tools:context=".Fregments.otpsetter">
+
+    <TextView
+        android:id="@+id/text_see"
+        android:layout_width="204dp"
+        android:layout_height="128dp"
+        android:fontFamily="sans-serif-black"
+        android:padding="12dp"
+        android:text="Verify"
+        android:textColor="#FF9800"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        android:transitionName="text_logo" />
+
+
+    <TextView
+        android:id="@+id/sign_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_see"
+        android:layout_marginTop="-49dp"
+        android:fontFamily="sans-serif-black"
+        android:text=" Your OTP Here.... "
+        android:textColor="#FF9800"
+        android:textSize="29dp"
+        android:transitionName="tv" />
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sign_text"
+        android:id="@+id/firstPinViewlay">
+
+    <com.chaos.view.PinView
+        android:id="@+id/firstPinView"
+        style="@style/PinWidget.PinView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sign_text"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:elevation="10dp"
+        android:inputType="number"
+        android:itemBackground="@drawable/pinbg"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:itemCount="6"
+        app:itemHeight="60dp"
+        app:itemRadius="10dp"
+        app:itemSpacing="2dp"
+        app:itemWidth="60dp"
+        app:lineColor="@color/med_black"
+        app:viewType="rectangle" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/firstPinViewlay"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Didn't Send a Code"
+            android:fontFamily="sans-serif-black"
+            android:textStyle="bold"
+            android:layout_marginRight="10dp"
+            android:textSize="15dp"/>
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_toEndOf="@id/textView2"
+            android:fontFamily="sans-serif-black"
+            android:text="Resend code"
+            android:textStyle="bold"
+            android:textSize="15dp"/>
+
+    </RelativeLayout>
+
+  <androidx.appcompat.widget.AppCompatButton
+      android:id="@+id/verify_bt"
+      android:layout_width="match_parent"
+      android:layout_height="60dp"
+      android:layout_alignParentBottom="true"
+      android:layout_marginLeft="30dp"
+      android:layout_marginRight="30dp"
+      android:layout_marginBottom="30dp"
+      android:text="Verify Create Account "
+      android:textColor="@color/white"
+      android:background="@drawable/buttonbg"
+      android:textSize="20sp" />
+
+</RelativeLayout>
+
+
+
+
+
