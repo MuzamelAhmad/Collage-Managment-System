@@ -1,31 +1,27 @@
 package com.example.myapplication;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Pair;
-import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 public class MainActivity extends AppCompatActivity {
-    int SPLASH_SCREEN= 5000;
+    public final int SPLASH_SCREEN= 5000;
 Animation top_anim,bottom_anim;
 ImageView image;
 TextView textView,textView2;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
-
-
-
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
@@ -43,11 +39,7 @@ TextView textView,textView2;
 
         new Handler().postDelayed(() -> {
             Intent i= new Intent(MainActivity.this, roll_base.class);
-
-            Pair[] pairs= new Pair[2];
-            pairs[0] = new Pair<View,String>(image,"image_logo");
-            pairs[1] = new Pair<View,String>(textView,"text_logo");
-            ActivityOptions options= ActivityOptions.makeSceneTransitionAnimation(MainActivity.this,pairs);
+            ActivityOptions options= ActivityOptions.makeSceneTransitionAnimation(MainActivity.this);
            startActivity(i,options.toBundle());
            finish();
 
